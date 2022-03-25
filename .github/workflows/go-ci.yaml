@@ -2,9 +2,9 @@ name: Golang CI
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ main ]
 
 jobs:
   linux-x86_64:
@@ -20,5 +20,5 @@ jobs:
     - name: go test
       run: go test -v ./...
 
-    - name: static build
-      run: CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags '-extldflags "-static"' -o main cmd/*.go
+        #- name: static build
+        #run: CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags '-extldflags "-static"' -o main cmd/*.go
