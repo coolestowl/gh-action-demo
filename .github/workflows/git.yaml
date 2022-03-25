@@ -16,5 +16,6 @@ jobs:
       - run: |
           git fetch --unshallow --tags
           echo $?
-          git tag --list
+
+          git describe --tags
 
