@@ -1,0 +1,20 @@
+name: git demo
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  describe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: coolestowl/gh-action-demo
+      - run: |
+          git fetch --unshallow --tags
+          echo $?
+          git tag --list
+
