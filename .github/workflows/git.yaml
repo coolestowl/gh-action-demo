@@ -21,4 +21,11 @@ jobs:
       - run: |
           pwd
           tree
+          echo 'hhh from ci' >> README.md
+      - uses: EndBug/add-and-commit@v9
+        with: 
+          add: './'
+          default_author: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
+          message: 'test commit in github actions'
 
