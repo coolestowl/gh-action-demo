@@ -1,0 +1,6 @@
+[book]
+authors = ["owl"]
+language = "en"
+multilingual = false
+src = "src"
+title = "gh-action-demo"
